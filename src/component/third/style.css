@@ -1,0 +1,10 @@
+.third{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.btn{
+    margin: 20px;
+}
