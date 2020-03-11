@@ -4,19 +4,20 @@ import { Button, Input, Menu, MenuItem } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { Pagination } from '@material-ui/lab';
 
-const useStyles = makeStyles(theme => ({
-    root: {
-      '& > *': {
-        marginTop: theme.spacing(2),
-      },
-    },
-  }));
 
-function Third(props){
+const useStyles = makeStyles((theme) => ({
+    root: {
+        '& > *': {
+            marginTop: theme.spacing(2)
+        }
+    }
+}));
+
+function Third(props) {
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
 
-    const handleClick = event => {
+    const handleClick = (event) => {
         setAnchorEl(event.currentTarget);
     };
 
@@ -30,13 +31,7 @@ function Third(props){
             <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
                 Open Menu
             </Button>
-            <Menu
-                id="simple-menu"
-                anchorEl={anchorEl}
-                keepMounted
-                open={Boolean(anchorEl)}
-                onClose={handleClose}
-            >
+            <Menu id="simple-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
                 <MenuItem onClick={handleClose}>Profile</MenuItem>
                 <MenuItem onClick={handleClose}>My account</MenuItem>
                 <MenuItem onClick={handleClose}>Logout</MenuItem>
@@ -48,7 +43,7 @@ function Third(props){
                 Hello World
             </Button>
         </div>
-    )
+    );
 }
 
-export default Third
+export default Third;

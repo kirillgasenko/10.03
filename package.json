@@ -1,41 +1,72 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@material-ui/core": "^4.9.5",
-    "@material-ui/lab": "^4.0.0-alpha.45",
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "antd": "^4.0.2",
-    "bootstrap": "^4.4.1",
-    "bootstrap-react": "^0.3.1",
-    "material-ui": "^0.20.2",
-    "react": "^16.13.0",
-    "react-bootstrap": "^1.0.0-beta.17",
-    "react-dom": "^16.13.0",
-    "react-scripts": "3.4.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "name": "my-app",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@material-ui/core": "^4.9.5",
+        "@material-ui/lab": "^4.0.0-alpha.45",
+        "@testing-library/jest-dom": "^4.2.4",
+        "@testing-library/react": "^9.5.0",
+        "@testing-library/user-event": "^7.2.1",
+        "antd": "^4.0.2",
+        "bootstrap": "^4.4.1",
+        "bootstrap-react": "^0.3.1",
+        "eslint-config-common": "^3.0.1",
+        "material-ui": "^0.20.2",
+        "react": "^16.13.0",
+        "react-bootstrap": "^1.0.0-beta.17",
+        "react-dom": "^16.13.0",
+        "react-scripts": "3.4.0"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "precommit": "lint-staged"
+    },
+    "lint-staged": {
+        "src/component/first/index.js": [
+            "prettier --single-quote --use-tabs --trailing-comma es5 --write",
+            "git add"
+        ]
+    },
+    "eslint.autoFixOnSave": true,
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "prettier",
+            "airbnb-base"
+        ],
+        "root": true,
+        "env": {
+            "browser": true
+        }
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "eslint": "^6.1.0",
+        "eslint-config-airbnb": "^18.0.1",
+        "eslint-config-prettier": "^6.10.0",
+        "eslint-config-rallycoding": "^3.2.0",
+        "eslint-plugin-import": "^2.18.2",
+        "eslint-plugin-jsx-a11y": "^6.2.3",
+        "eslint-plugin-prettier": "^3.1.2",
+        "eslint-plugin-react": "^7.14.3",
+        "eslint-plugin-react-hooks": "^1.7.0",
+        "husky": "^4.2.3",
+        "lint-staged": "^10.0.8",
+        "prettier": "^1.19.1"
+    }
 }
